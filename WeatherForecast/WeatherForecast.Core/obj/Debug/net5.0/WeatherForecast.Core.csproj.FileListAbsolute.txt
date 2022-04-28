@@ -1,0 +1,12 @@
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\bin\Debug\net5.0\WeatherForecast.Core.deps.json
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\bin\Debug\net5.0\WeatherForecast.Core.dll
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\bin\Debug\net5.0\ref\WeatherForecast.Core.dll
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\bin\Debug\net5.0\WeatherForecast.Core.pdb
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\obj\Debug\net5.0\WeatherForecast.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\obj\Debug\net5.0\WeatherForecast.Core.AssemblyInfoInputs.cache
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\obj\Debug\net5.0\WeatherForecast.Core.AssemblyInfo.cs
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\obj\Debug\net5.0\WeatherForecast.Core.csproj.CoreCompileInputs.cache
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\obj\Debug\net5.0\WeatherForecast.Core.dll
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\obj\Debug\net5.0\ref\WeatherForecast.Core.dll
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\obj\Debug\net5.0\WeatherForecast.Core.pdb
+D:\ClientTest\WeatherForecast\WeatherForecast.Core\obj\Debug\net5.0\WeatherForecast.Core.csproj.AssemblyReference.cache
