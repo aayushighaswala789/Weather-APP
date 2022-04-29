@@ -1,0 +1,113 @@
+<div id="weather-forecast">
+  <div class="weather">
+    <div class="weather__widget">
+      <div class="weather__header">
+        <div class="weather__header-details">
+          <img
+            class="weather__header-icon"
+            alt=""
+            role="presentation"
+            src="//cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="weather__header-stamp">
+            <span class="weather__header-today">Today</span
+            ><span class="weather__header-date">{{ today | date }}</span>
+          </div>
+        </div>
+        <div class="pr pl">
+          <form class="ant-form ant-form-horizontal weather__form">
+            <mat-form-field class="city-form-wrapper" appearance="fill">
+              <mat-label>City</mat-label>
+              <input
+                type="text"
+                placeholder="City"
+                aria-label="City"
+                matInput
+                [formControl]="cityCTRL"
+                [matAutocomplete]="auto"
+                (input)="$event.preventDefault()"
+              />
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option
+                  *ngFor="let city of allCities"
+                  [value]="city.localizedName"
+                  (onSelectionChange)="getSelectedCity(city.key)"
+                >
+                  {{ city.localizedName }},
+                  {{ city.administrativeArea.localizedName }}
+                  {{ city.country.localizedName }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+      <div class="weather__content">
+        <div class="weather__current">
+          <div class="weather__current-condition">
+            {{ weatherData.type }}
+          </div>
+          <div class="weather__current-text">
+            {{
+              weatherData.temperature !== "N/A"
+                ? (weatherData.temperature | number: "1.1-1")
+                : weatherData.temperature
+            }}&#176;
+          </div>
+        </div>
+        <div class="weather__container">
+          <mat-slide-toggle
+            color="primary"
+            size="large"
+            (change)="celsiusToFahrenhei($event.checked)"
+          ></mat-slide-toggle>
+
+          <div class="weather__details">
+            <div class="weather__detail">
+              <i class="fas fa-wind weather__details-icon"></i>
+              <div class="weather__details-item">
+                <span class="weather__details-label">Wind (km/h)</span
+                ><span>{{ weatherData.wind }}</span>
+                <span class="weather__details-label">Cloud</span
+                ><span>{{ weatherData.cloud }}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="weather__forecast">
+          <div
+            class="weather__card weather__card--active"
+            [ngClass]="{ 'weather__card--active': isActiveSelection(weather) }"
+            *ngFor="let weather of weeklyWeatherData; index as i"
+            (click)="weatherDaySelection(weather)"
+          >
+            <img
+              class="weather__card-icon"
+              [src]="
+                '../../../assets/images/' + weather[dayNight].icon + '.png'
+              "
+              alt=""
+              role="presentation"
+            /><span class="weather__card-text">{{
+              weather.forecastDate | date: "EEEE"
+            }}</span>
+            <span class="weather__card-text weather__card-text--avg">
+              {{ weather.temperature.minValue | number: "1.1-1" }}&#176;
+            </span>
+            <div class="weather__card-details">
+              <span class="weather__card-text weather__card-text--min"
+                >{{
+                  weather.temperature.minValue | number: "1.1-1"
+                }}&#176;</span
+              ><span class="weather__card-text weather__card-text--max"
+                >{{
+                  weather.temperature.maxValue | number: "1.1-1"
+                }}&#176;</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
