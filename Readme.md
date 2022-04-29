@@ -35,7 +35,7 @@ npm i
 
 ## Run Application
 - Change connection string in backend code in appsetting.json file.
-- Run migrations ```dotnet ef database update```.
+- Run migrations using ```update-database``` in Package manager console of visual studio.
 - Run .net application.
 - Run angular app using ```ng serve```.
 
